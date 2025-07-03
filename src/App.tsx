@@ -20,9 +20,9 @@ const content = {
   es: {
     nav: {
       home: 'Inicio',
-      projects: 'Proyectos',
-      skills: 'Habilidades',
       about: 'Sobre Mí',
+      skills: 'Habilidades',
+      projects: 'Proyectos',
       contact: 'Contacto'
     },
     hero: {
@@ -31,6 +31,7 @@ const content = {
       subtitle: 'Transformando ideas en soluciones de software elegantes y funcionales',
       viewProjects: 'Ver mis Proyectos',
       downloadCV: 'Descargar CV',
+      learnMore: 'Saber Más', // Texto nuevo
       cvPath: '/brayan-zorro-cv-es.pdf'
     },
     projects: {
@@ -164,9 +165,9 @@ const content = {
   en: {
     nav: {
       home: 'Home',
-      projects: 'Projects',
-      skills: 'Skills',
       about: 'About',
+      skills: 'Skills',
+      projects: 'Projects',
       contact: 'Contact'
     },
     hero: {
@@ -175,6 +176,7 @@ const content = {
       subtitle: 'Transforming ideas into elegant and functional software solutions',
       viewProjects: 'View My Projects',
       downloadCV: 'Download CV',
+      learnMore: 'Learn More', // New text
       cvPath: '/brayan-zorro-cv-en.pdf'
     },
     projects: {
@@ -316,7 +318,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'projects', 'skills', 'about', 'contact'];
+      const sections = ['hero', 'about', 'skills', 'projects', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -388,7 +390,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white font-sans">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white font-sans overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-gray-900/80 border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -448,10 +450,11 @@ function App() {
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <button
-              onClick={() => scrollToSection('projects')}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25"
+              onClick={() => scrollToSection('about')}
+              className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25"
             >
-              {t.hero.viewProjects}
+              <User size={18} />
+              {t.hero.learnMore}
             </button>
             <button
               onClick={handleDownloadCV}
@@ -463,6 +466,136 @@ function App() {
           </div>
           <div className="animate-bounce">
             <ChevronDown size={32} className="mx-auto text-gray-400" />
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div
+            data-animate
+            id="about-content"
+            className={`max-w-5xl mx-auto transition-all duration-700 ${isVisible['about-content'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}
+          >
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                {t.about.title}
+              </h2>
+              <p className="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                {t.about.description}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mt-12">
+              {/* Columna Izquierda */}
+              <div className="space-y-6">
+                <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
+                  <h3 className="text-xl font-bold text-blue-400 mb-4">{language === 'es' ? 'Experiencia Actual' : 'Current Experience'}</h3>
+                  <p className="text-gray-300 mb-2">{t.about.currentRole}</p>
+                  <p className="text-sm text-gray-400">{language === 'es' ? 'Febrero 2024 - Actualidad' : 'February 2024 - Present'}</p>
+                </div>
+
+                <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
+                  <h3 className="text-xl font-bold text-blue-400 mb-4">{language === 'es' ? 'Educación' : 'Education'}</h3>
+                  <p className="text-gray-300 mb-2">{t.about.education}</p>
+                  <p className="text-sm text-gray-400">{language === 'es' ? 'Febrero 2024 - en curso' : 'February 2024 - ongoing'}</p>
+                </div>
+
+                <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
+                  <h3 className="text-xl font-bold text-blue-400 mb-4">{language === 'es' ? 'Certificaciones' : 'Certifications'}</h3>
+                  <ul className="space-y-2">
+                    {t.about.certifications.map((cert, index) => (
+                      <li key={index} className="text-gray-300 list-disc list-inside">{cert}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="flex flex-wrap gap-x-6 gap-y-2 pt-4">
+                  <div className="flex items-center gap-2 text-blue-400">
+                    <User size={18} />
+                    <span>{t.about.experience}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-blue-400">
+                    <Code size={18} />
+                    <span>{t.about.projects}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Columna Derecha */}
+              <div className="space-y-8">
+                <div className="flex justify-center items-center">
+                  <div className="relative">
+                    <div className="w-80 h-80 md:w-96 md:h-96 rounded-full bg-gradient-to-br from-blue-600 to-purple-600 p-1">
+                      <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center overflow-hidden">
+                        <img src="/profile-photo.JPEG" alt="Brayan Zorro" className="w-full h-full object-cover" />
+                      </div>
+                    </div>
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-600/20 to-purple-600/20 animate-pulse"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="text-lg font-semibold text-white mb-3 pt-4 text-center lg:text-left">{language === 'es' ? 'Aptitudes' : 'Soft Skills'}:</h4>
+                  <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
+                    {t.about.skills.map((skill, index) => (
+                      <span key={index} className="bg-blue-600/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-600/30">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/50">
+        <div className="max-w-7xl mx-auto">
+          <div
+            data-animate
+            id="skills-header"
+            className={`text-center mb-16 transition-all duration-700 ${isVisible['skills-header'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+              {t.skills.title}
+            </h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              {t.skills.subtitle}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {t.skills.categories.map((category, categoryIndex) => (
+              <div
+                key={categoryIndex}
+                data-animate
+                id={`skill-category-${categoryIndex}`}
+                className={`bg-gray-800/50 rounded-xl p-6 backdrop-blur-sm border border-gray-700 hover:border-blue-500/50 transition-all duration-500 ${isVisible[`skill-category-${categoryIndex}`] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                  }`}
+                style={{ transitionDelay: `${categoryIndex * 100}ms` }}
+              >
+                <h3 className="text-xl font-bold mb-6 text-blue-400 flex items-center gap-2">
+                  <category.icon size={20} />
+                  {category.title}
+                </h3>
+                <div className="space-y-3">
+                  {category.skills.map((skill, skillIndex) => (
+                    <div
+                      key={skillIndex}
+                      className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer group"
+                    >
+                      <div className="w-2 h-2 bg-blue-400 rounded-full group-hover:scale-125 transition-transform duration-200"></div>
+                      <span className="font-medium">{skill.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -547,136 +680,6 @@ function App() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Skills Section */}
-      <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/50">
-        <div className="max-w-7xl mx-auto">
-          <div
-            data-animate
-            id="skills-header"
-            className={`text-center mb-16 transition-all duration-700 ${isVisible['skills-header'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-              {t.skills.title}
-            </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              {t.skills.subtitle}
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {t.skills.categories.map((category, categoryIndex) => (
-              <div
-                key={categoryIndex}
-                data-animate
-                id={`skill-category-${categoryIndex}`}
-                className={`bg-gray-800/50 rounded-xl p-6 backdrop-blur-sm border border-gray-700 hover:border-blue-500/50 transition-all duration-500 ${isVisible[`skill-category-${categoryIndex}`] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                  }`}
-                style={{ transitionDelay: `${categoryIndex * 100}ms` }}
-              >
-                <h3 className="text-xl font-bold mb-6 text-blue-400 flex items-center gap-2">
-                  <category.icon size={20} />
-                  {category.title}
-                </h3>
-                <div className="space-y-3">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div
-                      key={skillIndex}
-                      className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer group"
-                    >
-                      <div className="w-2 h-2 bg-blue-400 rounded-full group-hover:scale-125 transition-transform duration-200"></div>
-                      <span className="font-medium">{skill.name}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div
-            data-animate
-            id="about-content"
-            className={`max-w-5xl mx-auto transition-all duration-700 ${isVisible['about-content'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`}
-          >
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                {t.about.title}
-              </h2>
-              <p className="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
-                {t.about.description}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mt-12">
-              {/* Columna Izquierda */}
-              <div className="space-y-6">
-                <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
-                  <h3 className="text-xl font-bold text-blue-400 mb-4">{language === 'es' ? 'Experiencia Actual' : 'Current Experience'}</h3>
-                  <p className="text-gray-300 mb-2">{t.about.currentRole}</p>
-                  <p className="text-sm text-gray-400">{language === 'es' ? 'Febrero 2024 - Actualidad' : 'February 2024 - Present'}</p>
-                </div>
-
-                <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
-                  <h3 className="text-xl font-bold text-blue-400 mb-4">{language === 'es' ? 'Educación' : 'Education'}</h3>
-                  <p className="text-gray-300 mb-2">{t.about.education}</p>
-                  <p className="text-sm text-gray-400">{language === 'es' ? 'Febrero 2024 - en curso' : 'February 2024 - ongoing'}</p>
-                </div>
-
-                <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
-                  <h3 className="text-xl font-bold text-blue-400 mb-4">{language === 'es' ? 'Certificaciones' : 'Certifications'}</h3>
-                  <ul className="space-y-2">
-                    {t.about.certifications.map((cert, index) => (
-                      <li key={index} className="text-gray-300 list-disc list-inside">{cert}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="flex flex-wrap gap-x-6 gap-y-2 pt-4">
-                  <div className="flex items-center gap-2 text-blue-400">
-                    <User size={18} />
-                    <span>{t.about.experience}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-blue-400">
-                    <Code size={18} />
-                    <span>{t.about.projects}</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Columna Derecha */}
-              <div className="space-y-8">
-                <div className="flex justify-center items-center">
-                  <div className="relative">
-                    <div className="w-80 h-80 md:w-96 md:h-96 rounded-full bg-gradient-to-br from-blue-600 to-purple-600 p-1">
-                      <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center overflow-hidden">
-                        <img src="/profile-photo.JPEG" alt="Brayan Zorro" className="w-full h-full object-cover" />
-                      </div>
-                    </div>
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-600/20 to-purple-600/20 animate-pulse"></div>
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="text-lg font-semibold text-white mb-3 pt-4 text-center lg:text-left">{language === 'es' ? 'Aptitudes' : 'Soft Skills'}:</h4>
-                  <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-                    {t.about.skills.map((skill, index) => (
-                      <span key={index} className="bg-blue-600/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-600/30">
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
