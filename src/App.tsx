@@ -57,16 +57,16 @@ const content = {
         {
           title: "Dashboard de Analytics",
           description: "Dashboard interactivo con visualización de datos en tiempo real, métricas personalizables y reportes automatizados.",
-          image: "https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop",
+          image: "../public/sigmaSumate.png",
           tech: ["NextJs", "Firebase", "Api de Gemini", "Chart.js"],
-          demo: "https://example.com/analytics-dashboard-demo"
+          demo: "https://sigma.sumate.eu/"
         },
         {
           title: "Formulario Inteligente de Ciberseguridad",
           description: "Formulario interactivo que evalúa el nivel de riesgo de ciberseguridad de un usuario y ofrece recomendaciones personalizadas.",
-          image: "https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop",
+          image: "../public/quizCiberSeguridad.png",
           tech: ["React", "TypeScript", "Flask", "TailwindCSS"],
-          demo: "https://example.com/formulario-ciberseguridad"
+          demo: "https://quiz-ciber-fraude.vercel.app/"
         }
       ]
     },
@@ -132,7 +132,8 @@ const content = {
       certifications: [
         'Certificación en Python para Data Science',
         'Desarrollo Full-Stack con UADE',
-        'Prompt Engineering para Desarrolladores'
+        'Prompt Engineering para Desarrolladores',
+        'CCNA I'
       ],
       skills: [
         'Trabajo en equipo',
@@ -202,16 +203,16 @@ const content = {
         {
           title: "Analytics Dashboard",
           description: "Interactive dashboard with real-time data visualization, customizable metrics and automated reports.",
-          image: "https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop",
+          image: "../public/sigmaSumate.png",
           tech: ["NextJs", "Firebase", "Api de Gemini", "Chart.js"],
-          demo: "https://example.com/analytics-dashboard-demo"
+          demo: "https://sigma.sumate.eu/"
         },
         {
           title: "Cybersecurity Smart Form",
           description: "Interactive form that assesses a user's cybersecurity risk level and provides personalized recommendations.",
-          image: "https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop",
+          image: "../public/quizCiberSeguridad.png",
           tech: ["React", "TypeScript", "Flask", "TailwindCSS"],
-          demo: "https://example.com/formulario-ciberseguridad"
+          demo: "https://quiz-ciber-fraude.vercel.app/"
         }
       ]
     },
@@ -277,7 +278,8 @@ const content = {
       certifications: [
         'Python for Data Science Certification',
         'Full-Stack Development with UADE',
-        'Prompt Engineering for Developers'
+        'Prompt Engineering for Developers',
+        'CCNA I'
       ],
       skills: [
         'Teamwork',
