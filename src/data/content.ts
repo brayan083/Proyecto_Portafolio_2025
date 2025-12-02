@@ -34,7 +34,7 @@ export const content = {
                 {
                     title: "Analizador de PDFs con IA",
                     description: "Herramienta que utiliza IA para analizar documentos PDF, extraer información clave y generar preguntas de forma automática sobre su contenido.",
-                    image: "../public/AnalizadorPdf.webp",
+                    image: "/AnalizadorPdf.webp",
                     tech: ["API de OpenAI", "NextJs"],
                     github: "https://github.com/brayan-zorro/analizador-pdf-ia",
                     demo: "https://example.com/analizador-pdf-ia"
@@ -42,7 +42,7 @@ export const content = {
                 {
                     title: "E-commerce de Comida Colombiana",
                     description: "Plataforma de e-commerce para un restaurante de comida colombiana en Buenos Aires, con menú interactivo, carrito de compras y sistema de pedidos.",
-                    image: "../public/E-commerceColombiano.jpeg",
+                    image: "/E-commerceColombiano.jpeg",
                     tech: ["Next.js", "TailwindCSS", "Firebase", "Mercado Pago API"],
                     github: "https://github.com/brayan-zorro/ecommerce-comida-colombiana",
                     demo: "https://example.com/tienda-comida-colombiana"
@@ -50,14 +50,14 @@ export const content = {
                 {
                     title: "Dashboard de Analytics",
                     description: "Dashboard interactivo con visualización de datos en tiempo real, métricas personalizables y reportes automatizados.",
-                    image: "../public/sigmaSumate.png",
+                    image: "/sigmaSumate.png",
                     tech: ["NextJs", "Firebase", "Api de Gemini", "Chart.js"],
                     demo: "https://sigma.sumate.eu/"
                 },
                 {
                     title: "Formulario Inteligente de Ciberseguridad",
                     description: "Formulario interactivo que evalúa el nivel de riesgo de ciberseguridad de un usuario y ofrece recomendaciones personalizadas.",
-                    image: "../public/quizCiberSeguridad.png",
+                    image: "/quizCiberSeguridad.png",
                     tech: ["React", "TypeScript", "Flask", "TailwindCSS"],
                     demo: "https://quiz-ciber-fraude.vercel.app/"
                 }
@@ -184,7 +184,7 @@ export const content = {
                 {
                     title: "AI-Powered PDF Analyzer",
                     description: "A tool that uses AI to analyze PDF documents, extract key information, and automatically generate questions about their content.",
-                    image: "https://images.pexels.com/photos/7176026/pexels-photo-7176026.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop",
+                    image: "/AnalizadorPdf.webp",
                     tech: ["API de OpenAI", "NextJs"],
                     github: "https://github.com/brayan-zorro/analizador-pdf-ia",
                     demo: "https://example.com/analizador-pdf-ia"
@@ -192,7 +192,7 @@ export const content = {
                 {
                     title: "Colombian Food E-commerce",
                     description: "E-commerce platform for a Colombian food restaurant in Buenos Aires, featuring an interactive menu, shopping cart, and ordering system.",
-                    image: "https://images.pexels.com/photos/262959/pexels-photo-262959.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop",
+                    image: "/E-commerceColombiano.jpeg",
                     tech: ["Next.js", "TailwindCSS", "Firebase", "Mercado Pago API"],
                     github: "https://github.com/brayan-zorro/ecommerce-comida-colombiana",
                     demo: "https://example.com/tienda-comida-colombiana"
@@ -200,14 +200,14 @@ export const content = {
                 {
                     title: "Analytics Dashboard",
                     description: "Interactive dashboard with real-time data visualization, customizable metrics and automated reports.",
-                    image: "../public/sigmaSumate.png",
+                    image: "/sigmaSumate.png",
                     tech: ["NextJs", "Firebase", "Api de Gemini", "Chart.js"],
                     demo: "https://sigma.sumate.eu/"
                 },
                 {
                     title: "Cybersecurity Smart Form",
                     description: "Interactive form that assesses a user's cybersecurity risk level and provides personalized recommendations.",
-                    image: "../public/quizCiberSeguridad.png",
+                    image: "/quizCiberSeguridad.png",
                     tech: ["React", "TypeScript", "Flask", "TailwindCSS"],
                     demo: "https://quiz-ciber-fraude.vercel.app/"
                 }

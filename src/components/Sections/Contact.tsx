@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, Loader2 } from 'lucide-react';
+import { Send, Loader2, Mail, Linkedin, Github, Phone, ExternalLink } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -48,7 +48,6 @@ const Contact: React.FC<ContactProps> = ({ data, isVisible, language }) => {
   const onSubmit = async (formData: FormData) => {
     setIsSubmitting(true);
     
-    // TODO: Replace with your actual EmailJS credentials
     const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -75,6 +74,45 @@ const Contact: React.FC<ContactProps> = ({ data, isVisible, language }) => {
       setIsSubmitting(false);
     }
   };
+
+  const contactCards = [
+    {
+      icon: Mail,
+      title: 'Email',
+      value: data.emailAddress,
+      href: `mailto:${data.emailAddress}`,
+      color: 'text-blue-400',
+      borderColor: 'group-hover:border-blue-500/50',
+      bgHover: 'group-hover:bg-blue-500/10'
+    },
+    {
+      icon: Linkedin,
+      title: 'LinkedIn',
+      value: language === 'es' ? 'Ver Perfil' : 'View Profile',
+      href: data.linkedin,
+      color: 'text-blue-600',
+      borderColor: 'group-hover:border-blue-600/50',
+      bgHover: 'group-hover:bg-blue-600/10'
+    },
+    {
+      icon: Github,
+      title: 'GitHub',
+      value: language === 'es' ? 'Ver Proyectos' : 'View Projects',
+      href: data.github,
+      color: 'text-purple-500',
+      borderColor: 'group-hover:border-purple-500/50',
+      bgHover: 'group-hover:bg-purple-500/10'
+    },
+    {
+      icon: Phone,
+      title: 'Phone',
+      value: data.phone,
+      href: `tel:${data.phone}`,
+      color: 'text-green-400',
+      borderColor: 'group-hover:border-green-500/50',
+      bgHover: 'group-hover:bg-green-500/10'
+    }
+  ];
 
   return (
     <section id="contact" className="py-20 px-4 md:px-8 max-w-7xl mx-auto">
@@ -179,37 +217,36 @@ const Contact: React.FC<ContactProps> = ({ data, isVisible, language }) => {
         <div 
           id="contact-info"
           data-animate
-          className={`space-y-8 transition-all duration-1000 delay-400 transform ${
+          className={`space-y-6 transition-all duration-1000 delay-400 transform ${
             isVisible['contact-info'] ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
           }`}
         >
-          <div className="bg-gray-800/30 p-6 rounded-2xl border border-gray-700 hover:border-blue-500/50 transition-colors group">
-            <h3 className="text-xl font-semibold mb-2 text-blue-400">Email</h3>
-            <a href={`mailto:${data.emailAddress}`} className="text-gray-300 hover:text-white transition-colors">
-              {data.emailAddress}
+          {contactCards.map((card, index) => (
+            <a
+              key={index}
+              href={card.href}
+              target={card.title === 'Phone' || card.title === 'Email' ? undefined : '_blank'}
+              rel="noopener noreferrer"
+              className={`block p-6 rounded-2xl bg-gray-800/30 border border-gray-700 transition-all duration-300 group hover:-translate-y-1 ${card.borderColor} ${card.bgHover}`}
+            >
+              <div className="flex items-center gap-4">
+                <div className={`p-3 rounded-xl bg-gray-900/50 ${card.color}`}>
+                  <card.icon className="w-6 h-6" />
+                </div>
+                <div className="flex-1">
+                  <h3 className={`text-sm font-medium mb-1 ${card.color}`}>
+                    {card.title}
+                  </h3>
+                  <p className="text-gray-300 font-medium flex items-center gap-2">
+                    {card.value}
+                    {(card.title === 'LinkedIn' || card.title === 'GitHub') && (
+                      <ExternalLink className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-opacity" />
+                    )}
+                  </p>
+                </div>
+              </div>
             </a>
-          </div>
-
-          <div className="bg-gray-800/30 p-6 rounded-2xl border border-gray-700 hover:border-purple-500/50 transition-colors group">
-            <h3 className="text-xl font-semibold mb-2 text-purple-400">LinkedIn</h3>
-            <a href={data.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
-              Ver Perfil / View Profile
-            </a>
-          </div>
-
-          <div className="bg-gray-800/30 p-6 rounded-2xl border border-gray-700 hover:border-green-500/50 transition-colors group">
-            <h3 className="text-xl font-semibold mb-2 text-green-400">GitHub</h3>
-            <a href={data.github} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
-              Ver Proyectos / View Projects
-            </a>
-          </div>
-          
-           <div className="bg-gray-800/30 p-6 rounded-2xl border border-gray-700 hover:border-pink-500/50 transition-colors group">
-            <h3 className="text-xl font-semibold mb-2 text-pink-400">Phone</h3>
-            <a href={`tel:${data.phone}`} className="text-gray-300 hover:text-white transition-colors">
-              {data.phone}
-            </a>
-          </div>
+          ))}
         </div>
       </div>
     </section>
