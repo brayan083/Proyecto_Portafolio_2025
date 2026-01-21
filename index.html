@@ -2,6 +2,11 @@
 <html lang="en">
 
 <head>
+  <script>
+    if (window.location.hostname.includes("web.app") || window.location.hostname.includes("firebaseapp.com")) {
+      window.location.replace("https://bzorro.dev" + window.location.pathname);
+    }
+  </script>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,6 +20,7 @@
   <meta name="google-site-verification" content="oT7UwwBNgbsOwR_2TmQJC0L42OHCyDvqk6u4Z4QHN8k" />
   <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#111827" />
+  <link rel="canonical" href="https://bzorro.dev/" />
 </head>
 
 <body>
