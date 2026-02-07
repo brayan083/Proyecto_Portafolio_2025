@@ -8,7 +8,7 @@ interface SEOProps {
 }
 
 const SEO: React.FC<SEOProps> = ({ title, description, lang }) => {
-  const canonicalUrl = 'https://bzorro.dev';
+  const canonicalUrl = import.meta.env.VITE_CANONICAL_URL || 'https://bzorro.dev';
 
   const structuredData = {
     "@context": "https://schema.org",

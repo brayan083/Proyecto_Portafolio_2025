@@ -34,6 +34,17 @@ function App() {
       }
     };
 
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
     const observerCallback: IntersectionObserverCallback = (entries) => {
       entries.forEach(entry => {
         setIsVisible(prev => ({
@@ -52,11 +63,11 @@ function App() {
       observer.observe(el);
     });
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('scroll', onScroll, { passive: true });
     handleScroll();
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', onScroll);
       observer.disconnect();
     };
   }, []);
@@ -73,14 +84,14 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white font-sans overflow-x-hidden">
+    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white font-sans overflow-x-hidden transition-colors duration-300">
       <Toaster position="top-center" richColors />
-      <SEO 
+      <SEO
         title={t.meta.title}
         description={t.meta.description}
         lang={language}
       />
-      <Navbar 
+      <Navbar
         navData={t.nav}
         activeSection={activeSection}
         scrollToSection={scrollToSection}
@@ -89,35 +100,36 @@ function App() {
         githubLink={t.contact.github}
       />
 
-      <Hero 
+      <Hero
         data={t.hero}
         scrollToSection={scrollToSection}
       />
 
-      <About 
+      <About
         data={t.about}
         isVisible={isVisible['about-content']}
         language={language}
       />
 
-      <Skills 
+      <Skills
         data={t.skills}
         isVisible={isVisible}
+        language={language}
       />
 
-      <Projects 
+      <Projects
         data={t.projects}
         isVisible={isVisible}
         language={language}
       />
 
-      <Contact 
+      <Contact
         data={t.contact}
         isVisible={isVisible}
         language={language}
       />
 
-      <Footer 
+      <Footer
         data={t.footer}
       />
     </div>

@@ -4,8 +4,9 @@ import {
     Server,
     Globe,
 } from 'lucide-react';
+import { ContentConfig } from './types';
 
-export const content = {
+export const content: Record<'es' | 'en', ContentConfig> = {
     es: {
         nav: {
             home: 'Inicio',
@@ -30,6 +31,7 @@ export const content = {
         projects: {
             title: 'Proyectos Destacados',
             subtitle: 'Una selección de mis trabajos más recientes y desafiantes',
+            loadMore: 'Cargar más',
             items: [
                 {
                     title: "Analizador de PDFs con IA",
@@ -74,6 +76,7 @@ export const content = {
                         { name: "JavaScript" },
                         { name: "TypeScript" },
                         { name: "Python" },
+                        { name: "Java" },
                         { name: "HTML & CSS" },
                         { name: "SQL" }
                     ]
@@ -85,6 +88,7 @@ export const content = {
                         { name: "React" },
                         { name: "Next.js" },
                         { name: "Node.js" },
+                        { name: "TailwindCSS" },
                         { name: "Django" },
                         { name: "Flask" },
                         { name: "Express.js" }
@@ -94,26 +98,29 @@ export const content = {
                     title: 'Bases de Datos',
                     icon: Database,
                     skills: [
+                        { name: "PostgreSQL" },
+                        { name: "MongoDB" },
                         { name: "MySQL" },
-                        { name: "SQL Server" },
                         { name: "Firebase" },
-                        { name: "MongoDB" }
+                        { name: "Supabase" }
                     ]
                 },
                 {
                     title: 'Cloud, IA y Herramientas',
                     icon: Globe,
                     skills: [
-                        { name: "Google Cloud" },
-                        { name: "API de ChatGPT (Agentes)" },
-                        { name: "APIs de Gemini y Claude" },
-                        { name: "n8n" },
-                        { name: "Protocolo mcp" },
+                        { name: "AWS" },
+                        { name: "Docker" },
+                        { name: "Vercel" },
                         { name: "Git & GitHub" },
-                        { name: "Heroku" }
+                        { name: "GitHub Actions" },
+                        { name: "Linux" },
+                        { name: "Agile/Scrum" },
+                        { name: "APIs de IA" }
                     ]
                 }
-            ]
+            ],
+            fastLearner: "Y si me falta alguna... ¡dame un fin de semana y la aprendo! 🚀"
         },
         about: {
             title: 'Sobre Mí',
@@ -121,7 +128,16 @@ export const content = {
             experience: '2+ años de experiencia',
             projects: '15+ proyectos completados',
             currentRole: 'Desarrollador en Empresa Súmate',
-            education: 'Tecnicatura en Desarrollo de Software - UADE',
+            education: [
+                {
+                    title: 'Tecnicatura en Desarrollo de Software - UADE',
+                    period: 'Febrero 2024 - Junio 2026'
+                },
+                {
+                    title: 'Ingeniería Informática',
+                    period: 'Junio 2026 - en curso'
+                }
+            ],
             certifications: [
                 'Certificación en Python para Data Science',
                 'Desarrollo Full-Stack con UADE',
@@ -150,6 +166,7 @@ export const content = {
             emailAddress: 'zorrobrayan0@gmail.com',
             linkedin: 'https://linkedin.com/in/brayan-zorro-b56ba427a',
             github: 'https://github.com/brayan083',
+            instagram: 'https://www.instagram.com/brayanzorro083/',
             phone: '+54-11-31777860'
         },
         footer: {
@@ -180,6 +197,7 @@ export const content = {
         projects: {
             title: 'Featured Projects',
             subtitle: 'A selection of my most recent and challenging work',
+            loadMore: 'Load More',
             items: [
                 {
                     title: "AI-Powered PDF Analyzer",
@@ -224,6 +242,7 @@ export const content = {
                         { name: "JavaScript" },
                         { name: "TypeScript" },
                         { name: "Python" },
+                        { name: "Java" },
                         { name: "HTML & CSS" },
                         { name: "SQL" }
                     ]
@@ -235,6 +254,7 @@ export const content = {
                         { name: "React" },
                         { name: "Next.js" },
                         { name: "Node.js" },
+                        { name: "TailwindCSS" },
                         { name: "Django" },
                         { name: "Flask" },
                         { name: "Express.js" }
@@ -244,26 +264,29 @@ export const content = {
                     title: 'Databases',
                     icon: Database,
                     skills: [
+                        { name: "PostgreSQL" },
+                        { name: "MongoDB" },
                         { name: "MySQL" },
-                        { name: "SQL Server" },
                         { name: "Firebase" },
-                        { name: "MongoDB" }
+                        { name: "Supabase" }
                     ]
                 },
                 {
                     title: 'Cloud, AI & Tools',
                     icon: Globe,
                     skills: [
-                        { name: "Google Cloud" },
-                        { name: "ChatGPT API (Agents)" },
-                        { name: "Gemini & Claude APIs" },
-                        { name: "n8n" },
-                        { name: "Protocol mcp" },
+                        { name: "AWS" },
+                        { name: "Docker" },
+                        { name: "Vercel" },
                         { name: "Git & GitHub" },
-                        { name: "Heroku" }
+                        { name: "GitHub Actions" },
+                        { name: "Linux" },
+                        { name: "Agile/Scrum" },
+                        { name: "ChatGPT/Claude APIs" }
                     ]
                 }
-            ]
+            ],
+            fastLearner: "And if I'm missing one... give me a weekend and I'll learn it! 🚀"
         },
         about: {
             title: 'About Me',
@@ -271,7 +294,16 @@ export const content = {
             experience: '2+ years of experience',
             projects: '15+ completed projects',
             currentRole: 'Developer at Empresa Súmate',
-            education: 'Software Development Degree - UADE',
+            education: [
+                {
+                    title: 'Software Development Degree - UADE',
+                    period: 'February 2024 - June 2026'
+                },
+                {
+                    title: 'Computer Engineering',
+                    period: 'June 2026 - ongoing'
+                }
+            ],
             certifications: [
                 'Python for Data Science Certification',
                 'Full-Stack Development with UADE',
@@ -300,6 +332,7 @@ export const content = {
             emailAddress: 'zorrobrayan0@gmail.com',
             linkedin: 'https://linkedin.com/in/brayan-zorro-b56ba427a',
             github: 'https://github.com/brayan083',
+            instagram: 'https://www.instagram.com/brayanzorro083/',
             phone: '+54-11-31777860'
         },
         footer: {

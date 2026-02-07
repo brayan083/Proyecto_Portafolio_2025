@@ -25,17 +25,17 @@ const Hero: React.FC<HeroProps> = ({ data, scrollToSection }) => {
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/10 to-transparent"></div>
+    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-purple-600/5 to-transparent dark:from-blue-600/20 dark:via-purple-600/10"></div>
       <div className="text-center z-10 px-4">
         <div className="mb-8 animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-white via-blue-100 to-blue-300 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-500 dark:from-white dark:via-blue-100 dark:to-blue-300 bg-clip-text text-transparent">
             {data.name}
           </h1>
-          <h2 className="text-2xl md:text-3xl text-blue-400 font-semibold mb-6">
+          <h2 className="text-2xl md:text-3xl text-blue-600 dark:text-blue-400 font-semibold mb-6">
             {data.title}
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
+          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
             {data.subtitle}
           </p>
         </div>
@@ -49,14 +49,14 @@ const Hero: React.FC<HeroProps> = ({ data, scrollToSection }) => {
           </button>
           <button
             onClick={handleDownloadCV}
-            className="border border-blue-600 text-blue-400 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 flex items-center gap-2"
+            className="border border-blue-600 text-blue-600 dark:text-blue-400 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 flex items-center gap-2"
           >
             <Download size={18} />
             {data.downloadCV}
           </button>
         </div>
         <div className="animate-bounce">
-          <ChevronDown size={32} className="mx-auto text-gray-400" />
+          <ChevronDown size={32} className="mx-auto text-gray-500 dark:text-gray-400" />
         </div>
       </div>
     </section>

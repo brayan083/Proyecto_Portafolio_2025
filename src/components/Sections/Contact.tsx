@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, Loader2, Mail, Linkedin, Github, Phone, ExternalLink } from 'lucide-react';
+import { Send, Loader2, Mail, Linkedin, Github, Instagram, Phone, ExternalLink } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -19,6 +19,7 @@ interface ContactProps {
     emailAddress: string;
     linkedin: string;
     github: string;
+    instagram: string;
     phone: string;
   };
   isVisible: { [key: string]: boolean };
@@ -28,7 +29,7 @@ interface ContactProps {
 const formSchema = (lang: 'es' | 'en') => z.object({
   name: z.string().min(2, lang === 'es' ? 'El nombre debe tener al menos 2 caracteres' : 'Name must be at least 2 characters'),
   email: z.string().email(lang === 'es' ? 'Email inválido' : 'Invalid email'),
-  message: z.string().min(10, lang === 'es' ? 'El mensaje debe tener al menos 10 caracteres' : 'Message must be at least 10 characters'),
+  message: z.string().min(1, lang === 'es' ? 'El mensaje no puede estar vacío' : 'Message cannot be empty'),
 });
 
 type FormData = z.infer<ReturnType<typeof formSchema>>;
@@ -47,7 +48,7 @@ const Contact: React.FC<ContactProps> = ({ data, isVisible, language }) => {
 
   const onSubmit = async (formData: FormData) => {
     setIsSubmitting(true);
-    
+
     const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -104,6 +105,15 @@ const Contact: React.FC<ContactProps> = ({ data, isVisible, language }) => {
       bgHover: 'group-hover:bg-purple-500/10'
     },
     {
+      icon: Instagram,
+      title: 'Instagram',
+      value: language === 'es' ? 'Ver Perfil' : 'View Profile',
+      href: data.instagram,
+      color: 'text-pink-500',
+      borderColor: 'group-hover:border-pink-500/50',
+      bgHover: 'group-hover:bg-pink-500/10'
+    },
+    {
       icon: Phone,
       title: 'Phone',
       value: data.phone,
@@ -115,78 +125,73 @@ const Contact: React.FC<ContactProps> = ({ data, isVisible, language }) => {
   ];
 
   return (
-    <section id="contact" className="py-20 px-4 md:px-8 max-w-7xl mx-auto">
-      <div 
+    <section id="contact" className="py-20 px-4 md:px-8 max-w-7xl mx-auto bg-gray-50 dark:bg-gray-900 transition-colors duration-300 rounded-xl my-8">
+      <div
         id="contact-header"
         data-animate
-        className={`text-center mb-16 transition-all duration-1000 transform ${
-          isVisible['contact-header'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}
+        className={`text-center mb-16 transition-all duration-1000 transform ${isVisible['contact-header'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-blue-500 dark:from-blue-400 dark:to-purple-500">
           {data.title}
         </h2>
-        <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+        <p className="text-gray-700 dark:text-gray-400 max-w-2xl mx-auto text-lg">
           {data.subtitle}
         </p>
       </div>
 
       <div className="grid md:grid-cols-2 gap-12 items-start">
-        <div 
+        <div
           id="contact-form"
           data-animate
-          className={`bg-gray-800/50 p-8 rounded-2xl backdrop-blur-sm border border-gray-700 transition-all duration-1000 delay-200 transform ${
-            isVisible['contact-form'] ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-          }`}
+          className={`bg-white dark:bg-gray-800/50 p-8 rounded-2xl backdrop-blur-sm border border-gray-200 dark:border-gray-700 shadow-lg dark:shadow-none transition-all duration-1000 delay-200 transform ${isVisible['contact-form'] ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+            }`}
         >
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 {data.form.name}
               </label>
               <input
                 type="text"
                 id="name"
                 {...register('name')}
-                className={`w-full px-4 py-3 bg-gray-900/50 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-colors ${
-                  errors.name ? 'border-red-500' : 'border-gray-600 focus:border-transparent'
-                }`}
+                className={`w-full px-4 py-3 bg-gray-50 dark:bg-gray-900/50 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-colors text-gray-900 dark:text-white ${errors.name ? 'border-red-500' : 'border-gray-300 dark:border-gray-600 focus:border-transparent'
+                  }`}
                 placeholder={language === 'es' ? 'Ej: Juan Pérez' : 'Ex: John Doe'}
               />
               {errors.name && (
                 <p className="mt-1 text-sm text-red-500">{errors.name.message}</p>
               )}
             </div>
-            
+
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 {data.form.email}
               </label>
               <input
                 type="email"
                 id="email"
                 {...register('email')}
-                className={`w-full px-4 py-3 bg-gray-900/50 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-colors ${
-                  errors.email ? 'border-red-500' : 'border-gray-600 focus:border-transparent'
-                }`}
+                className={`w-full px-4 py-3 bg-gray-50 dark:bg-gray-900/50 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-colors text-gray-900 dark:text-white ${errors.email ? 'border-red-500' : 'border-gray-300 dark:border-gray-600 focus:border-transparent'
+                  }`}
                 placeholder={language === 'es' ? 'Ej: juan@ejemplo.com' : 'Ex: john@example.com'}
               />
               {errors.email && (
                 <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>
               )}
             </div>
-            
+
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 {data.form.message}
               </label>
               <textarea
                 id="message"
                 rows={4}
                 {...register('message')}
-                className={`w-full px-4 py-3 bg-gray-900/50 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-colors resize-none ${
-                  errors.message ? 'border-red-500' : 'border-gray-600 focus:border-transparent'
-                }`}
+                className={`w-full px-4 py-3 bg-gray-50 dark:bg-gray-900/50 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-colors resize-none text-gray-900 dark:text-white ${errors.message ? 'border-red-500' : 'border-gray-300 dark:border-gray-600 focus:border-transparent'
+                  }`}
                 placeholder={language === 'es' ? 'Escribe tu mensaje aquí...' : 'Write your message here...'}
               ></textarea>
               {errors.message && (
@@ -214,12 +219,11 @@ const Contact: React.FC<ContactProps> = ({ data, isVisible, language }) => {
           </form>
         </div>
 
-        <div 
+        <div
           id="contact-info"
           data-animate
-          className={`space-y-6 transition-all duration-1000 delay-400 transform ${
-            isVisible['contact-info'] ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
-          }`}
+          className={`space-y-4 transition-all duration-1000 delay-400 transform ${isVisible['contact-info'] ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+            }`}
         >
           {contactCards.map((card, index) => (
             <a
@@ -227,19 +231,19 @@ const Contact: React.FC<ContactProps> = ({ data, isVisible, language }) => {
               href={card.href}
               target={card.title === 'Phone' || card.title === 'Email' ? undefined : '_blank'}
               rel="noopener noreferrer"
-              className={`block p-6 rounded-2xl bg-gray-800/30 border border-gray-700 transition-all duration-300 group hover:-translate-y-1 ${card.borderColor} ${card.bgHover}`}
+              className={`block p-5 rounded-2xl bg-white dark:bg-gray-800/30 border border-gray-200 dark:border-gray-700 shadow-lg dark:shadow-none transition-all duration-300 group hover:-translate-y-1 ${card.borderColor} ${card.bgHover}`}
             >
               <div className="flex items-center gap-4">
-                <div className={`p-3 rounded-xl bg-gray-900/50 ${card.color}`}>
+                <div className={`p-3 rounded-xl bg-gray-100 dark:bg-gray-900/50 ${card.color}`}>
                   <card.icon className="w-6 h-6" />
                 </div>
                 <div className="flex-1">
                   <h3 className={`text-sm font-medium mb-1 ${card.color}`}>
                     {card.title}
                   </h3>
-                  <p className="text-gray-300 font-medium flex items-center gap-2">
+                  <p className="text-gray-700 dark:text-gray-300 font-medium flex items-center gap-2">
                     {card.value}
-                    {(card.title === 'LinkedIn' || card.title === 'GitHub') && (
+                    {(card.title === 'LinkedIn' || card.title === 'GitHub' || card.title === 'Instagram') && (
                       <ExternalLink className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-opacity" />
                     )}
                   </p>
