@@ -1,10 +1,12 @@
 import React from 'react';
 import { Github, ExternalLink } from 'lucide-react';
+import ImageCarousel from '../ImageCarousel';
 
 interface ProjectItem {
   title: string;
   description: string;
-  image: string;
+  image?: string;
+  images?: string[];
   tech: string[];
   github?: string;
   demo: string;
@@ -93,12 +95,16 @@ const Projects: React.FC<ProjectsProps> = ({ data, isVisible, language }) => {
               style={{ transitionDelay: `${(index % 3) * 100}ms` }}
             >
               <div className="aspect-video overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                  loading="lazy"
-                />
+                {project.images && project.images.length > 0 ? (
+                  <ImageCarousel images={project.images} alt={project.title} />
+                ) : (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                )}
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">{project.title}</h3>

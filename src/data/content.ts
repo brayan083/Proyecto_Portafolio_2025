@@ -34,34 +34,35 @@ export const content: Record<'es' | 'en', ContentConfig> = {
             loadMore: 'Cargar más',
             items: [
                 {
+                    title: "Dashboard de Analytics",
+                    description: "Dashboard interactivo con visualización de datos en tiempo real, métricas personalizables y reportes automatizados.",
+                    images: ["/img_projects/Sigma1.png", "/img_projects/Sigma2.png", "/img_projects/Sigma3.png"],
+                    tech: ["NextJs", "Firebase", "Api de Gemini", "Chart.js"],
+                    demo: "https://sigma.sumate.eu/"
+                },
+                {
+                    title: "E-commerce de Comida Colombiana",
+                    description: "Plataforma de e-commerce para un restaurante de comida colombiana en Buenos Aires, con menú interactivo, carrito de compras y sistema de pedidos.",
+                    images: ["/img_projects/empalombia1.png", "/img_projects/empalombia2.png", "/img_projects/empalombia3.png"],
+                    tech: ["Next.js", "TailwindCSS", "Firebase", "Mercado Pago API"],
+                    github: "https://github.com/brayan083/sabor-colombiano",
+                    demo: "https://empalombia.bzorro.dev"
+                },
+                {
+                    title: "Formulario Inteligente de Ciberseguridad",
+                    description: "Formulario interactivo que evalúa el nivel de riesgo de ciberseguridad de un usuario y ofrece recomendaciones personalizadas.",
+                    images: ["/img_projects/Quiz1.png", "/img_projects/Quiz2.png", "/img_projects/Quiz3.png"],
+                    tech: ["React", "TypeScript", "Flask", "TailwindCSS"],
+                    github: "https://github.com/brayan083/QuizCiberFraude",
+                    demo: "https://quiz-ciber-fraude.vercel.app/"
+                },
+                {
                     title: "Analizador de PDFs con IA",
                     description: "Herramienta que utiliza IA para analizar documentos PDF, extraer información clave y generar preguntas de forma automática sobre su contenido.",
                     image: "/AnalizadorPdf.webp",
                     tech: ["API de OpenAI", "NextJs"],
                     github: "https://github.com/brayan-zorro/analizador-pdf-ia",
                     demo: "https://example.com/analizador-pdf-ia"
-                },
-                {
-                    title: "E-commerce de Comida Colombiana",
-                    description: "Plataforma de e-commerce para un restaurante de comida colombiana en Buenos Aires, con menú interactivo, carrito de compras y sistema de pedidos.",
-                    image: "/E-commerceColombiano.jpeg",
-                    tech: ["Next.js", "TailwindCSS", "Firebase", "Mercado Pago API"],
-                    github: "https://github.com/brayan-zorro/ecommerce-comida-colombiana",
-                    demo: "https://example.com/tienda-comida-colombiana"
-                },
-                {
-                    title: "Dashboard de Analytics",
-                    description: "Dashboard interactivo con visualización de datos en tiempo real, métricas personalizables y reportes automatizados.",
-                    image: "/sigmaSumate.png",
-                    tech: ["NextJs", "Firebase", "Api de Gemini", "Chart.js"],
-                    demo: "https://sigma.sumate.eu/"
-                },
-                {
-                    title: "Formulario Inteligente de Ciberseguridad",
-                    description: "Formulario interactivo que evalúa el nivel de riesgo de ciberseguridad de un usuario y ofrece recomendaciones personalizadas.",
-                    image: "/quizCiberSeguridad.png",
-                    tech: ["React", "TypeScript", "Flask", "TailwindCSS"],
-                    demo: "https://quiz-ciber-fraude.vercel.app/"
                 }
             ]
         },
@@ -200,34 +201,35 @@ export const content: Record<'es' | 'en', ContentConfig> = {
             loadMore: 'Load More',
             items: [
                 {
+                    title: "Analytics Dashboard",
+                    description: "Interactive dashboard with real-time data visualization, customizable metrics and automated reports.",
+                    images: ["/img_projects/Sigma1.png", "/img_projects/Sigma2.png", "/img_projects/Sigma3.png"],
+                    tech: ["NextJs", "Firebase", "Api de Gemini", "Chart.js"],
+                    demo: "https://sigma.sumate.eu/"
+                },
+                {
+                    title: "Colombian Food E-commerce",
+                    description: "E-commerce platform for a Colombian food restaurant in Buenos Aires, featuring an interactive menu, shopping cart, and ordering system.",
+                    images: ["/img_projects/empalombia1.png", "/img_projects/empalombia2.png", "/img_projects/empalombia3.png"],
+                    tech: ["Next.js", "TailwindCSS", "Firebase", "Mercado Pago API"],
+                    github: "https://github.com/brayan083/sabor-colombiano",
+                    demo: "https://empalombia.bzorro.dev"
+                },
+                {
+                    title: "Cybersecurity Smart Form",
+                    description: "Interactive form that assesses a user's cybersecurity risk level and provides personalized recommendations.",
+                    images: ["/img_projects/Quiz1.png", "/img_projects/Quiz2.png", "/img_projects/Quiz3.png"],
+                    tech: ["React", "TypeScript", "Flask", "TailwindCSS"],
+                    github: "https://github.com/brayan083/QuizCiberFraude",
+                    demo: "https://quiz-ciber-fraude.vercel.app/"
+                },
+                {
                     title: "AI-Powered PDF Analyzer",
                     description: "A tool that uses AI to analyze PDF documents, extract key information, and automatically generate questions about their content.",
                     image: "/AnalizadorPdf.webp",
                     tech: ["API de OpenAI", "NextJs"],
                     github: "https://github.com/brayan-zorro/analizador-pdf-ia",
                     demo: "https://example.com/analizador-pdf-ia"
-                },
-                {
-                    title: "Colombian Food E-commerce",
-                    description: "E-commerce platform for a Colombian food restaurant in Buenos Aires, featuring an interactive menu, shopping cart, and ordering system.",
-                    image: "/E-commerceColombiano.jpeg",
-                    tech: ["Next.js", "TailwindCSS", "Firebase", "Mercado Pago API"],
-                    github: "https://github.com/brayan-zorro/ecommerce-comida-colombiana",
-                    demo: "https://example.com/tienda-comida-colombiana"
-                },
-                {
-                    title: "Analytics Dashboard",
-                    description: "Interactive dashboard with real-time data visualization, customizable metrics and automated reports.",
-                    image: "/sigmaSumate.png",
-                    tech: ["NextJs", "Firebase", "Api de Gemini", "Chart.js"],
-                    demo: "https://sigma.sumate.eu/"
-                },
-                {
-                    title: "Cybersecurity Smart Form",
-                    description: "Interactive form that assesses a user's cybersecurity risk level and provides personalized recommendations.",
-                    image: "/quizCiberSeguridad.png",
-                    tech: ["React", "TypeScript", "Flask", "TailwindCSS"],
-                    demo: "https://quiz-ciber-fraude.vercel.app/"
                 }
             ]
         },
