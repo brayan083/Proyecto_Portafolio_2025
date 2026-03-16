@@ -139,15 +139,22 @@ const Projects: React.FC<ProjectsProps> = ({ data, isVisible, language }) => {
                       <span>{language === 'es' ? 'Privado' : 'Private'}</span>
                     </div>
                   )}
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 transition-colors duration-200"
-                  >
-                    <ExternalLink size={18} />
-                    <span>Demo</span>
-                  </a>
+                  {project.demo && project.demo !== "#" ? (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 transition-colors duration-200"
+                    >
+                      <ExternalLink size={18} />
+                      <span>Demo</span>
+                    </a>
+                  ) : (
+                    <span className="flex items-center gap-2 text-gray-400 dark:text-gray-600 cursor-not-allowed">
+                      <ExternalLink size={18} />
+                      <span>Demo</span>
+                    </span>
+                  )}
                 </div>
               </div>
             </div>

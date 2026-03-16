@@ -34,7 +34,7 @@ export const content: Record<'es' | 'en', ContentConfig> = {
             loadMore: 'Cargar más',
             items: [
                 {
-                    title: "Dashboard de Analytics",
+                    title: "Sigma Dashboard de Analytics",
                     description: "Dashboard interactivo con visualización de datos en tiempo real, métricas personalizables y reportes automatizados.",
                     images: ["/img_projects/Sigma1.png", "/img_projects/Sigma2.png", "/img_projects/Sigma3.png"],
                     tech: ["NextJs", "Firebase", "Api de Gemini", "Chart.js"],
@@ -57,12 +57,19 @@ export const content: Record<'es' | 'en', ContentConfig> = {
                     demo: "https://quiz-ciber-fraude.vercel.app/"
                 },
                 {
-                    title: "Analizador de PDFs con IA",
-                    description: "Herramienta que utiliza IA para analizar documentos PDF, extraer información clave y generar preguntas de forma automática sobre su contenido.",
-                    image: "/AnalizadorPdf.webp",
-                    tech: ["API de OpenAI", "NextJs"],
-                    github: "https://github.com/brayan-zorro/analizador-pdf-ia",
-                    demo: "https://example.com/analizador-pdf-ia"
+                    title: "Sonus",
+                    description: "Aplicación web que permite transcribir archivos de audio y video usando Whisper y generar resúmenes con IA. Ideal para clases, reuniones y contenido educativo.",
+                    images: ["/img_projects/Sonus 1.png", "/img_projects/Sonus 2.png", "/img_projects/Sonus 3.png"],
+                    tech: ["Python", "Flask", "Whisper", "Gemini API"],
+                    github: "https://github.com/brayan083/whisper-bray",
+                    demo: "#"
+                },
+                {
+                    title: "TimeTrack",
+                    description: "Aplicación de gestión de proyectos y seguimiento de tiempo con tablero Kanban, temporizador integrado y autenticación con Google.",
+                    images: ["/img_projects/TimeTrack 1.png", "/img_projects/TimeTrack 2.png", "/img_projects/TimeTrack 3.png", "/img_projects/TimeTrack 4.png"],
+                    tech: ["Next.js", "TypeScript", "Firebase", "TailwindCSS"],
+                    demo: "https://timetrack.bzorro.dev"
                 }
             ]
         },
@@ -201,7 +208,7 @@ export const content: Record<'es' | 'en', ContentConfig> = {
             loadMore: 'Load More',
             items: [
                 {
-                    title: "Analytics Dashboard",
+                    title: "Sigma Analytics Dashboard",
                     description: "Interactive dashboard with real-time data visualization, customizable metrics and automated reports.",
                     images: ["/img_projects/Sigma1.png", "/img_projects/Sigma2.png", "/img_projects/Sigma3.png"],
                     tech: ["NextJs", "Firebase", "Api de Gemini", "Chart.js"],
@@ -224,12 +231,19 @@ export const content: Record<'es' | 'en', ContentConfig> = {
                     demo: "https://quiz-ciber-fraude.vercel.app/"
                 },
                 {
-                    title: "AI-Powered PDF Analyzer",
-                    description: "A tool that uses AI to analyze PDF documents, extract key information, and automatically generate questions about their content.",
-                    image: "/AnalizadorPdf.webp",
-                    tech: ["API de OpenAI", "NextJs"],
-                    github: "https://github.com/brayan-zorro/analizador-pdf-ia",
-                    demo: "https://example.com/analizador-pdf-ia"
+                    title: "Sonus",
+                    description: "Web application for transcribing audio and video files using Whisper and generating AI-powered summaries. Ideal for lectures, meetings, and educational content.",
+                    images: ["/img_projects/Sonus 1.png", "/img_projects/Sonus 2.png", "/img_projects/Sonus 3.png"],
+                    tech: ["Python", "Flask", "Whisper", "Gemini API"],
+                    github: "https://github.com/brayan083/whisper-bray",
+                    demo: "#"
+                },
+                {
+                    title: "TimeTrack",
+                    description: "Project management and time tracking app with Kanban board, built-in timer, and Google authentication.",
+                    images: ["/img_projects/TimeTrack 1.png", "/img_projects/TimeTrack 2.png", "/img_projects/TimeTrack 3.png", "/img_projects/TimeTrack 4.png"],
+                    tech: ["Next.js", "TypeScript", "Firebase", "TailwindCSS"],
+                    demo: "https://timetrack.bzorro.dev"
                 }
             ]
         },
