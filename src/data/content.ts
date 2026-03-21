@@ -70,6 +70,14 @@ export const content: Record<'es' | 'en', ContentConfig> = {
                     images: ["/img_projects/TimeTrack 1.png", "/img_projects/TimeTrack 2.png", "/img_projects/TimeTrack 3.png", "/img_projects/TimeTrack 4.png"],
                     tech: ["Next.js", "TypeScript", "Firebase", "TailwindCSS"],
                     demo: "https://timetrack.bzorro.dev"
+                },
+                {
+                    title: "KeyStorm",
+                    description: "Juego de mecanografía estilo 'lluvia de palabras' donde debes teclear términos de programación antes de que caigan. Incluye sistema de niveles, dificultad progresiva y vidas.",
+                    images: ["/img_projects/keyStorm1.png", "/img_projects/keystorm2.png"],
+                    tech: ["JavaScript", "Tailwind CSS", "Vite", "Firebase"],
+                    github: "https://github.com/brayan083/KeyStorm",
+                    demo: "https://keystorm.bzorro.dev"
                 }
             ]
         },
@@ -244,6 +252,14 @@ export const content: Record<'es' | 'en', ContentConfig> = {
                     images: ["/img_projects/TimeTrack 1.png", "/img_projects/TimeTrack 2.png", "/img_projects/TimeTrack 3.png", "/img_projects/TimeTrack 4.png"],
                     tech: ["Next.js", "TypeScript", "Firebase", "TailwindCSS"],
                     demo: "https://timetrack.bzorro.dev"
+                },
+                {
+                    title: "KeyStorm",
+                    description: "Typing game with a 'word rain' style where you must type programming terms before they fall. Features level system, progressive difficulty, and lives.",
+                    images: ["/img_projects/keyStorm1.png", "/img_projects/keystorm2.png"],
+                    tech: ["JavaScript", "Tailwind CSS", "Vite", "Firebase"],
+                    github: "https://github.com/brayan083/KeyStorm",
+                    demo: "https://keystorm.bzorro.dev"
                 }
             ]
         },
