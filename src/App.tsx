@@ -1,14 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { Toaster } from 'sonner';
 import Navbar from './components/Layout/Navbar';
 import Hero from './components/Sections/Hero';
 import About from './components/Sections/About';
 import Skills from './components/Sections/Skills';
-import Projects from './components/Sections/Projects';
-import Contact from './components/Sections/Contact';
 import Footer from './components/Layout/Footer';
 import SEO from './components/SEO/SEO';
 import { content } from './data/content';
+
+const Projects = lazy(() => import('./components/Sections/Projects'));
+const Contact = lazy(() => import('./components/Sections/Contact'));
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
@@ -117,17 +118,21 @@ function App() {
         language={language}
       />
 
-      <Projects
-        data={t.projects}
-        isVisible={isVisible}
-        language={language}
-      />
+      <Suspense fallback={<div className="py-20 text-center"><div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto" /></div>}>
+        <Projects
+          data={t.projects}
+          isVisible={isVisible}
+          language={language}
+        />
+      </Suspense>
 
-      <Contact
-        data={t.contact}
-        isVisible={isVisible}
-        language={language}
-      />
+      <Suspense fallback={<div className="py-20 text-center"><div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto" /></div>}>
+        <Contact
+          data={t.contact}
+          isVisible={isVisible}
+          language={language}
+        />
+      </Suspense>
 
       <Footer
         data={t.footer}

@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Send, Loader2, Mail, Linkedin, Github, Instagram, Phone, ExternalLink } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
 import emailjs from 'emailjs-com';
 import { toast } from 'sonner';
+import { contactFormSchema, ContactFormData } from '../../utils/contactSchema';
 
 interface ContactProps {
   data: {
@@ -26,13 +26,6 @@ interface ContactProps {
   language: 'es' | 'en';
 }
 
-const formSchema = (lang: 'es' | 'en') => z.object({
-  name: z.string().min(2, lang === 'es' ? 'El nombre debe tener al menos 2 caracteres' : 'Name must be at least 2 characters'),
-  email: z.string().email(lang === 'es' ? 'Email inválido' : 'Invalid email'),
-  message: z.string().min(1, lang === 'es' ? 'El mensaje no puede estar vacío' : 'Message cannot be empty'),
-});
-
-type FormData = z.infer<ReturnType<typeof formSchema>>;
 
 const Contact: React.FC<ContactProps> = ({ data, isVisible, language }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -42,11 +35,11 @@ const Contact: React.FC<ContactProps> = ({ data, isVisible, language }) => {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<FormData>({
-    resolver: zodResolver(formSchema(language)),
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema(language)),
   });
 
-  const onSubmit = async (formData: FormData) => {
+  const onSubmit = async (formData: ContactFormData) => {
     setIsSubmitting(true);
 
     const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
