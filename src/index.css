@@ -28,3 +28,19 @@
 .animate-slide-up {
   animation: slideUp 0.5s ease-out forwards;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-slide-up {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

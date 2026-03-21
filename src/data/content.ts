@@ -36,14 +36,14 @@ export const content: Record<'es' | 'en', ContentConfig> = {
                 {
                     title: "Sigma Dashboard de Analytics",
                     description: "Dashboard interactivo con visualización de datos en tiempo real, métricas personalizables y reportes automatizados.",
-                    images: ["/img_projects/Sigma1.png", "/img_projects/Sigma2.png", "/img_projects/Sigma3.png"],
+                    images: ["/img_projects/Sigma1.webp", "/img_projects/Sigma2.webp", "/img_projects/Sigma3.webp"],
                     tech: ["NextJs", "Firebase", "Api de Gemini", "Chart.js"],
                     demo: "https://sigma.sumate.eu/"
                 },
                 {
                     title: "E-commerce de Comida Colombiana",
                     description: "Plataforma de e-commerce para un restaurante de comida colombiana en Buenos Aires, con menú interactivo, carrito de compras y sistema de pedidos.",
-                    images: ["/img_projects/empalombia1.png", "/img_projects/empalombia2.png", "/img_projects/empalombia3.png"],
+                    images: ["/img_projects/empalombia1.webp", "/img_projects/empalombia2.webp", "/img_projects/empalombia3.webp"],
                     tech: ["Next.js", "TailwindCSS", "Firebase", "Mercado Pago API"],
                     github: "https://github.com/brayan083/sabor-colombiano",
                     demo: "https://empalombia.bzorro.dev"
@@ -51,7 +51,7 @@ export const content: Record<'es' | 'en', ContentConfig> = {
                 {
                     title: "Formulario Inteligente de Ciberseguridad",
                     description: "Formulario interactivo que evalúa el nivel de riesgo de ciberseguridad de un usuario y ofrece recomendaciones personalizadas.",
-                    images: ["/img_projects/Quiz1.png", "/img_projects/Quiz2.png", "/img_projects/Quiz3.png"],
+                    images: ["/img_projects/Quiz1.webp", "/img_projects/Quiz2.webp", "/img_projects/Quiz3.webp"],
                     tech: ["React", "TypeScript", "Flask", "TailwindCSS"],
                     github: "https://github.com/brayan083/QuizCiberFraude",
                     demo: "https://quiz-ciber-fraude.vercel.app/"
@@ -59,7 +59,7 @@ export const content: Record<'es' | 'en', ContentConfig> = {
                 {
                     title: "Sonus",
                     description: "Aplicación web que permite transcribir archivos de audio y video usando Whisper y generar resúmenes con IA. Ideal para clases, reuniones y contenido educativo.",
-                    images: ["/img_projects/Sonus 1.png", "/img_projects/Sonus 2.png", "/img_projects/Sonus 3.png"],
+                    images: ["/img_projects/Sonus 1.webp", "/img_projects/Sonus 2.webp", "/img_projects/Sonus 3.webp"],
                     tech: ["Python", "Flask", "Whisper", "Gemini API"],
                     github: "https://github.com/brayan083/whisper-bray",
                     demo: "#"
@@ -67,14 +67,14 @@ export const content: Record<'es' | 'en', ContentConfig> = {
                 {
                     title: "TimeTrack",
                     description: "Aplicación de gestión de proyectos y seguimiento de tiempo con tablero Kanban, temporizador integrado y autenticación con Google.",
-                    images: ["/img_projects/TimeTrack 1.png", "/img_projects/TimeTrack 2.png", "/img_projects/TimeTrack 3.png", "/img_projects/TimeTrack 4.png"],
+                    images: ["/img_projects/TimeTrack 1.webp", "/img_projects/TimeTrack 2.webp", "/img_projects/TimeTrack 3.webp", "/img_projects/TimeTrack 4.webp"],
                     tech: ["Next.js", "TypeScript", "Firebase", "TailwindCSS"],
                     demo: "https://timetrack.bzorro.dev"
                 },
                 {
                     title: "KeyStorm",
                     description: "Juego de mecanografía estilo 'lluvia de palabras' donde debes teclear términos de programación antes de que caigan. Incluye sistema de niveles, dificultad progresiva y vidas.",
-                    images: ["/img_projects/keyStorm1.png", "/img_projects/keystorm2.png"],
+                    images: ["/img_projects/keyStorm1.webp", "/img_projects/keystorm2.webp"],
                     tech: ["JavaScript", "Tailwind CSS", "Vite", "Firebase"],
                     github: "https://github.com/brayan083/KeyStorm",
                     demo: "https://keystorm.bzorro.dev"
@@ -218,14 +218,14 @@ export const content: Record<'es' | 'en', ContentConfig> = {
                 {
                     title: "Sigma Analytics Dashboard",
                     description: "Interactive dashboard with real-time data visualization, customizable metrics and automated reports.",
-                    images: ["/img_projects/Sigma1.png", "/img_projects/Sigma2.png", "/img_projects/Sigma3.png"],
+                    images: ["/img_projects/Sigma1.webp", "/img_projects/Sigma2.webp", "/img_projects/Sigma3.webp"],
                     tech: ["NextJs", "Firebase", "Api de Gemini", "Chart.js"],
                     demo: "https://sigma.sumate.eu/"
                 },
                 {
                     title: "Colombian Food E-commerce",
                     description: "E-commerce platform for a Colombian food restaurant in Buenos Aires, featuring an interactive menu, shopping cart, and ordering system.",
-                    images: ["/img_projects/empalombia1.png", "/img_projects/empalombia2.png", "/img_projects/empalombia3.png"],
+                    images: ["/img_projects/empalombia1.webp", "/img_projects/empalombia2.webp", "/img_projects/empalombia3.webp"],
                     tech: ["Next.js", "TailwindCSS", "Firebase", "Mercado Pago API"],
                     github: "https://github.com/brayan083/sabor-colombiano",
                     demo: "https://empalombia.bzorro.dev"
@@ -233,7 +233,7 @@ export const content: Record<'es' | 'en', ContentConfig> = {
                 {
                     title: "Cybersecurity Smart Form",
                     description: "Interactive form that assesses a user's cybersecurity risk level and provides personalized recommendations.",
-                    images: ["/img_projects/Quiz1.png", "/img_projects/Quiz2.png", "/img_projects/Quiz3.png"],
+                    images: ["/img_projects/Quiz1.webp", "/img_projects/Quiz2.webp", "/img_projects/Quiz3.webp"],
                     tech: ["React", "TypeScript", "Flask", "TailwindCSS"],
                     github: "https://github.com/brayan083/QuizCiberFraude",
                     demo: "https://quiz-ciber-fraude.vercel.app/"
@@ -241,7 +241,7 @@ export const content: Record<'es' | 'en', ContentConfig> = {
                 {
                     title: "Sonus",
                     description: "Web application for transcribing audio and video files using Whisper and generating AI-powered summaries. Ideal for lectures, meetings, and educational content.",
-                    images: ["/img_projects/Sonus 1.png", "/img_projects/Sonus 2.png", "/img_projects/Sonus 3.png"],
+                    images: ["/img_projects/Sonus 1.webp", "/img_projects/Sonus 2.webp", "/img_projects/Sonus 3.webp"],
                     tech: ["Python", "Flask", "Whisper", "Gemini API"],
                     github: "https://github.com/brayan083/whisper-bray",
                     demo: "#"
@@ -249,14 +249,14 @@ export const content: Record<'es' | 'en', ContentConfig> = {
                 {
                     title: "TimeTrack",
                     description: "Project management and time tracking app with Kanban board, built-in timer, and Google authentication.",
-                    images: ["/img_projects/TimeTrack 1.png", "/img_projects/TimeTrack 2.png", "/img_projects/TimeTrack 3.png", "/img_projects/TimeTrack 4.png"],
+                    images: ["/img_projects/TimeTrack 1.webp", "/img_projects/TimeTrack 2.webp", "/img_projects/TimeTrack 3.webp", "/img_projects/TimeTrack 4.webp"],
                     tech: ["Next.js", "TypeScript", "Firebase", "TailwindCSS"],
                     demo: "https://timetrack.bzorro.dev"
                 },
                 {
                     title: "KeyStorm",
                     description: "Typing game with a 'word rain' style where you must type programming terms before they fall. Features level system, progressive difficulty, and lives.",
-                    images: ["/img_projects/keyStorm1.png", "/img_projects/keystorm2.png"],
+                    images: ["/img_projects/keyStorm1.webp", "/img_projects/keystorm2.webp"],
                     tech: ["JavaScript", "Tailwind CSS", "Vite", "Firebase"],
                     github: "https://github.com/brayan083/KeyStorm",
                     demo: "https://keystorm.bzorro.dev"
